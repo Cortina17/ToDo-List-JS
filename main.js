@@ -9,7 +9,7 @@ window.addEventListener("load", () => {
         const task = input.value;
 
         if (!task) {
-            alert("Añade una tarea!");
+            alert("Please, add a task!");
             return;
         }
 
@@ -34,11 +34,11 @@ window.addEventListener("load", () => {
 
         const task_edit_el = document.createElement("button");
         task_edit_el.classList.add("edit");
-        task_edit_el.innerHTML = "Editar";
+        task_edit_el.innerHTML = "Edit";
 
         const task_delete_el = document.createElement("button");
         task_delete_el.classList.add("delete");
-        task_delete_el.innerText = "Borrar";
+        task_delete_el.innerText = "Delete";
 
         task_actions_el.appendChild(task_edit_el);
         task_actions_el.appendChild(task_delete_el);
@@ -50,14 +50,14 @@ window.addEventListener("load", () => {
         input.value = "";
 
         task_edit_el.addEventListener('click', () => {
-            if (task_edit_el.innerText.toLowerCase() == "editar") {
+            if (task_edit_el.innerText.toLowerCase() == "edit") {
                 task_input_el.removeAttribute("readonly");
                 task_input_el.focus();
                 console.log("save");
-                task_edit_el.innerText = "Guardar";
+                task_edit_el.innerText = "Save";
             } else {
                 task_input_el.setAttribute("readonly", "readonly");
-                task_edit_el.innerText = "Editar";
+                task_edit_el.innerText = "Edit";
             }
         });
 
